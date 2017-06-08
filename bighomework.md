@@ -243,5 +243,69 @@ await 命令只能用在 async 函数之中，如果用在普通函数，就会�
 ```
 
 
+# Reflect
+## 一、简介
+Reflect不是构造函数， 要使用的时候直接通过Reflect.method()调用， Reflect有的方法和Proxy差不多， 而且多数Reflect方法原生的Object已经重新实现了。
+## 二、方法
+1. Reflect.get
+Reflect.get方法允许您获取对象上的属性。
+```javascript
+// Object
+var obj = { x: 1, y: 2 };
+Reflect.get(obj, 'x'); // 1
+
+// Array
+Reflect.get(['zero', 'one'], 1); // "one"
+
+// Proxy with a get handler
+// Proxy with a get handler
+var x = {p: 1};
+var obj = new Proxy(x, {
+  get(t, k, r) { return k + 'bar'; }
+});
+Reflect.get(obj, 'foo'); // "foobar"
+```
+2. Reflect.set
+Reflect.set方法允许设置对象上的属性,能给属性赋值。
+```javascript
+// Object
+var obj = {};
+Reflect.set(obj, 'prop', 'value'); // true
+obj.prop; // "value"
+
+// Array
+var arr = ['duck', 'duck', 'duck'];
+Reflect.set(arr, 2, 'goose'); // true
+arr[2]; // "goose"
+
+// It can truncate an array.
+Reflect.set(arr, 'length', 1); // true
+arr; // ["duck"]; 
+```
+3. Reflect.apply
+用于反射调用函数并传参
+语法：
+```javascript
+Reflect.apply(target, thisArgument, argumentsList)
+```
+* target:目标函数
+* thisArgument:目标对象，用于绑定函数上下文中的this 
+* argumentsList:可迭代的参数列表
+
+```javascript
+Reflect.apply(Math.floor, undefined, [1.75]); 
+// 1;
+
+Reflect.apply(String.fromCharCode, undefined, [104, 101, 108, 108, 111]);
+// "hello"
+
+Reflect.apply(RegExp.prototype.exec, /ab/, ['confabulation']).index;
+// 4
+
+Reflect.apply(''.charAt, 'ponies', [3]);
+// "i"
+```
+4.Reflect.has
 
 
+  
