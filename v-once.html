@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue Chenjiayao</title>
+		
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	</head>
+    <div id="app">
+        <h1>姓名：<label v-once v-text="Name"></label></h1>
+        <h1 v-once>年龄：{{ Age }}</h1>
+        <h1>学校：{{ School }}</h1>
+    </div>
+    <script>
+    //Model
+    var data = {
+        Name: '陈家耀',
+        Age: 22,
+        School:'浙江大学城市学院',
+    }
+
+    //ViewModel
+    var vue = new Vue({
+        el: '#app',
+        data: data,
+    });
+    </script>
+</html>

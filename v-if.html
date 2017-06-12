@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue If</title>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h1>Welcome!</h1>
+			 <h1>姓名：<label v-text="Name"></label></h1>
+        	 <h1>是否毕业：<span v-if="IsBy">是</span></h1>
+        	 <h1>是否及格：<span v-if="Score>60">合格</span><span v-else>不及格</span></h1>
+			 <h1>年龄：<span v-if="age >= 25">{{ age }}</span></h1>
+        	 <h1>学校：{{ School }}</h1>
+		</div>
+	</body>
+	
+	<script>
+		
+		var vm2 = new Vue({
+			el: '#app',
+			data: {
+				Name: '陈家耀',
+        		IsBy: true,
+        		Score: 80,
+				age: 22,
+        		School:'浙江大学城市学院'
+			}
+		})
+	</script>
+</html>

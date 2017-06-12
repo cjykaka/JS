@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue Chenjiayao</title>
+		<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+	</head>
+
+	<body>
+	
+
+<div id="app">
+    <form>
+        姓名：
+        <input type="text" v-model="abc.name" placeholder="姓名"/>
+        <br />
+        性别：
+        <input type="radio" id="one" value="One" v-model="abc.sex"/>
+        <label for="man">男</label>
+        <input type="radio" id="two" value="Two" v-model="abc.sex"/>
+        <label for="male">女</label>
+        <br />
+        兴趣爱好：
+        <input type="checkbox" id="jack" value="book" v-model="abc.interest"/>
+        <label for="jack">阅读</label>
+        <input type="checkbox" id="john" value="swim" v-model="abc.interest"/>
+        <label for="john">游泳</label>
+        <input type="checkbox" id="move" value="game" v-model="abc.interest"/>
+        <label for="move">游戏</label>
+        <input type="checkbox" id="mike" value="song" v-model="abc.interest"/>
+        <label for="mike">唱歌</label>
+        <br />
+        年级：
+        <select v-model="abc.identity">
+            <option value="1" selected>大一</option>
+            <option value="2">大二</option>
+            <option value="3">大三</option>
+            <option value="4">大四</option>
+        </select>          
+    </form>
+</div>
+<script >
+    new Vue({
+        el: '#app',
+        data: {
+            abc:{
+                name:'',
+                sex:'',
+                interest:[],
+                identity:''
+            }
+        }
+    })
+</script>
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue 单选</title>
+        <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1>欢迎选择你的课程!</h1>
+            <input type="radio" id="js" value="跨平台脚本" v-model="picked">
+            <label for="js">跨平台脚本</label>
+        <br>
+            <input type="radio" id="java" value="面向对象程序设计" v-model="picked">
+            <label for="java">面向对象程序设计</label>
+        <br>
+            <input type="radio" id="Android" value="安卓UI设计" v-model="picked">
+            <label for="Android">安卓UI设计</label>
+        <br>
+        <span>选择的课程为: {{ picked }}</span>
+        </div>
+   </body>
+    <script>
+        new Vue({
+        el: '#app',
+        data: {
+	    picked : '当前无'
+            }
+        })
+    </script>
+    
+</html>

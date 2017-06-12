@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue ChenJiayao</title>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h1 v-if="age >= 25">Age: {{ age }}</h1>
+			<h1 v-else>Name: {{ name }}</h1>
+			<h1> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp VS</h1>
+			<h1 v-show="name.indexOf('Jia') >= 0">Name: {{ name }}</h1>
+			<h1 v-else>Sex: {{ sex }}</h1>
+		</div>
+	</body>
+
+	<script>
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				age: 22,
+				name: 'ChenJiayao',
+				sex: 'Male'
+			}
+		})
+	</script>
+</html>

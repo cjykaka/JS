@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue Chenjiayao</title>
+		<link rel="stylesheet" href="styles/demo.css" />
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<table>
+				<thead>
+					<tr>
+						<th>姓名</th>
+						<th>号码</th>
+						<th>球队</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="person in people">
+						<td>{{ person.name  }}</td>
+						<td>{{ person.num  }}</td>
+						<td>{{ person.team  }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+	<script>
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				people: [{
+					name: 'C罗纳尔多',
+					num: 7,
+					team: '皇家马德里'
+				}, {
+					name: '贝尔',
+					num: 11,
+					team: '皇家马德里'
+				}, {
+					name: '梅西',
+					num: 10,
+					team: '巴塞罗那'
+				}, {
+					name: '诺伊尔',
+					num: 1,
+					team: '拜仁慕尼黑'
+				}]
+			}
+		})
+	</script>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue 列表</title>
+        <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+    <body>
+    <div id="app">
+        <select v-model="selected" name="course">
+            <option value="">选择一门课程</option>
+            <option value="js">跨平台脚本</option>
+            <option value="java">面向对象程序设计</option>
+            <option value="Android">安卓UI设计</option>
+        </select>
+ 
+        <div id="output">
+            选择的课程是: {{selected}}
+        </div>
+    </div>
+    </body>
+    
+    <script>
+        new Vue({
+        el: '#app',
+        data: {
+	    selected: '' 
+  }
+})
+    </script>
+</html>

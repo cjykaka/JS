@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue Chenjiayao</title>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	</head>
+
+	<body>
+		<!--这是我们的View-->
+		<div id="app">
+			<p>{{ message }}</p>
+			<input type="text" v-model="message"/>
+		</div>
+		
+	</body>
+	<script>
+		// 这是我们的Model
+		var exampleData = {
+			message: 'Chenjiayao!'
+		}
+
+		// 创建一个 Vue 实例或 "ViewModel"
+		// 它连接 View 与 Model
+		new Vue({
+			el: '#app',
+			data: exampleData
+		})
+	</script>
+</html>
